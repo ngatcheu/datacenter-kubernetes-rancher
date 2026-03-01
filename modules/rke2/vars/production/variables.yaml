@@ -1,0 +1,18 @@
+---
+rke2_version: v1.33.7+rke2r1
+rke2_ha_mode: true
+rke2_ha_mode_keepalived: true
+rke2_api_ip: 192.168.1.130
+rke2_download_kubeconf: true
+rke2_download_kubeconf_path: ./
+rke2_download_kubeconf_file_name: kubeconfig.yaml
+rke2_cni: cilium
+# Configuration explicite des CIDRs pour éviter les conflits Calico/Canal
+rke2_cluster_cidr:
+  - 10.42.0.0/16
+rke2_service_cidr:
+  - 10.43.0.0/16
+rke2_ingress_nginx_values:
+  controller:
+    hostPort:
+      enabled: false

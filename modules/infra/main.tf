@@ -43,6 +43,12 @@ resource "proxmox_virtual_environment_vm" "rancher_1" {
     dedicated = var.rancher_memory
   }
 
+  disk {
+    datastore_id = "local-lvm"
+    interface    = "scsi0"
+    size         = var.rancher_disk_size
+  }
+
   network_device {
     bridge = var.network_bridge
     model  = "virtio"
@@ -89,6 +95,12 @@ resource "proxmox_virtual_environment_vm" "rancher_2" {
     dedicated = var.rancher_memory
   }
 
+  disk {
+    datastore_id = "local-lvm"
+    interface    = "scsi0"
+    size         = var.rancher_disk_size
+  }
+
   network_device {
     bridge = var.network_bridge
     model  = "virtio"
@@ -133,6 +145,12 @@ resource "proxmox_virtual_environment_vm" "rancher_3" {
 
   memory {
     dedicated = var.rancher_memory
+  }
+
+  disk {
+    datastore_id = "local-lvm"
+    interface    = "scsi0"
+    size         = var.rancher_disk_size
   }
 
   network_device {

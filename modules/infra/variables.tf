@@ -49,3 +49,9 @@ variable "rancher_cpu_cores" {
 variable "rancher_memory" {
   type = number
 }
+
+variable "rancher_disk_size" {
+  description = "Taille du disque principal en GB"
+  type        = number
+  default     = 60
+}

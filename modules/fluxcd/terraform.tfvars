@@ -1,0 +1,6 @@
+github_owner                = "ngatcheu"
+github_repository           = "datacenter-gitops-fluxcd"
+github_branch               = "main"
+flux_bootstrap_git_path     = "clusters/cluster-rancher"
+flux_kubernetes_config_path = "../rke2/kubeconfig.yaml"
+flux_kubernetes_context     = "default"
